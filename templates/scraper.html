@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraping WebScraper.io</title>
+    <link rel="stylesheet" href="/static/estilos.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="contenido contenido-navbar">
+            <h1>Webscraper</h1>
+            <button id="button" onclick="location.href='https://webscraper.io/test-sites/e-commerce/scroll/'" target="_blank"> Visitar sitio </button>
+        </div>
+    </nav>
+
+    <div>
+    {% for nombre_producto, productos in datos_productos.items() %}
+            <h3>{{nombre_producto|title}}</h3>
+            <table>
+                <tr>
+                    <th>Nombre producto</th>
+                    <th>Descripcion</th>
+                    <th>Precio</th>
+                    <th>No. de reviews</th>
+                </tr>
+
+            {% for producto in productos %}
+            <tr>
+                <td>{{producto[0]}}</td>
+                <td>{{producto[1]}}</td>
+                <td>{{producto[2]}}</td>
+                <td>{{producto[3]}}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        {% endfor %}
+            
+        </div>
+
+
+
+    
+</body>
+</html>
